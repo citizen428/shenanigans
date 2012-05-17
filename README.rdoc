@@ -1,0 +1,57 @@
+= Shenanigans
+
+*shenanigan* (plural shenanigans):
+
+1. Trickery, games; skulduggery. To "call", "claim" or "declare" shenanigans is to rhetorically label something as officially deceitful, improper, or otherwise incorrect. <em>"The advertisement said it would cost $50 but they charged me $75 at the register. I declare shenanigans."</em> The speaker passes off the statement as having some sort of implied official effect, but in reality, it is simply a complaint.
+
+2. A deceitful confidence trick, or mischief causing discomfort or annoyance. <em>You should learn to spot their shenanigans and avoid being fooled.</em>
+
+3. Mischievous play, especially by children.
+
+Source: {Wiktionary}[http://en.wiktionary.org/wiki/shenanigan#English]
+
+== Introduction
+
+Ruby Facets is the premiere collection of general purpose method
+extensions and standard additions for the Ruby programming language. This is not Ruby Facets though, so what you get is a random collection of methods I wrote because I found them interesting and/or useful. Some of them I actually also contributed to Facets, although sometimes they have different names or slightly different implementations.
+
+== Installation
+
+Shenanigans can be installed via {RubyGems}[http://rubygems.org/].
+
+  $ gem install shenanigans
+
+I only works on 1.9.3 and I generally only test it with the most current Ruby release.
+
+
+== Usage
+
+If you really want the whole shebang, you can get it this way:
+
+  require 'shenanigans'
+
+Requiring a single method works as follows:
+
+  require 'shenanigans/<class|module>/<method>'
+
+Requiring all the extensions of a class or module also works:
+
+  require 'shenanigans/kernel'
+
+== Contribute
+
+If you have something you want to contribute to Shenanigans, you shoud reconsider and add it to Facets instead. This is a library for my own wonky ideas and I don't think it will ever see any real usage.
+
+== Authors
+
+This project was created by Michael Kohl. He can be reached via email at citizen428 at gmail.com.
+
+== License
+
+Copyright (c) 2012 Michael Kohl
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
