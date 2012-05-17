@@ -6,5 +6,5 @@ Gem::Specification.new do |gem|
   gem.summary = "Think Facets, just less useful"
   gem.homepage = 'https://github.com/citizen428/shenanigans'
   gem.require_paths = %w[lib]
-  gem.files = Dir['**/*']
+  gem.files = Dir['Gemfile', 'LICENSE', 'README.rdoc', 'doc/**/*', 'lib/**/*', 'test/**/*']
 end
