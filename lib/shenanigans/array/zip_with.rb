@@ -11,7 +11,7 @@ class Array
   #
   # For more complex combinations, a block can be provided:
   #
-  #   [1,2,3].zw([6,5,4]) { |a,b| 3*a+2*b }
+  #   [1,2,3].zip_with([6,5,4]) { |a,b| 3*a+2*b }
   #   #=> [15, 16, 17]
   def zip_with(other, op=nil)
     return [] if self.empty? || other.empty?
