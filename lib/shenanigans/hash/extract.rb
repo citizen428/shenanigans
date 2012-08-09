@@ -1,0 +1,12 @@
+class Hash
+  # Returns a new hash only with the specified keys (if present).
+  #   hash = { a: 1, b: 2, c: 3 }
+  #   hash.extract(:b, :a)
+  #   #=> { a: 1, b: 2 }
+  #   hash.extract(:a, :d)
+  #   #=> { a: 1}
+  def extract(*ks)
+    existing = keys & ks
+    Hash[existing.zip(values_at(*existing))]
+  end
+end
