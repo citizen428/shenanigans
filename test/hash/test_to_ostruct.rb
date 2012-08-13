@@ -13,7 +13,8 @@ class ToOstruct < MiniTest::Unit::TestCase
   end
 
   def test_nested_array
-    struct = {a: 1, b: [{c: 2}]}.to_ostruct
+    struct = {a: 1, b: [{c: 2}, 5]}.to_ostruct
     assert struct.b.first.c == 2
+    assert struct.b.last == 5
   end
 end
