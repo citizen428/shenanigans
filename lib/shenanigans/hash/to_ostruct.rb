@@ -26,7 +26,7 @@ class Hash
       when Hash
         [k, v.to_ostruct]
       when Array
-        [k, v.map(&:to_ostruct)]
+        [k, v.map { |el| Hash === el ? el.to_ostruct : el }]
       else
         [k, v]
       end
