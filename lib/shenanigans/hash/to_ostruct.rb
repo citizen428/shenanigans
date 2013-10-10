@@ -26,11 +26,11 @@ class Hash
       when Hash
         [k, v.to_ostruct]
       when Array
-        [k, v.map { |el| Hash === el ? el.to_ostruct : el }]
+        [k, v.map { |el| el.respond_to?(:to_ostruct) ? el.to_ostruct : el }]
       else
         [k, v]
       end
     end
-    OpenStruct.new(arr)
+    OpenStruct.new(Hash[arr])
   end
 end
