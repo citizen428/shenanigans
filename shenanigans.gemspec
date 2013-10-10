@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
   gem.name = 'shenanigans'
-  gem.version = '1.0.7'
+  gem.version = '1.0.8'
   gem.author = 'Michael Kohl'
   gem.email = 'citizen428@gmail.com'
   gem.summary = "Think Facets, just less useful"
