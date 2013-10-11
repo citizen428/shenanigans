@@ -1,8 +1,9 @@
 class Module
   private
 
-  # Works like attr_accessor but generates private methods for
-  # class internal use only.
+  # Works like <tt>attr_accessor</tt> but generates private
+  # getter/setter methods for class internal use only. Useful
+  # for enforcing Smalltalk-style internal encapsulation.
   def private_accessor(*names)
     names.each do |name|
       instance_var_name = "@#{name}"
@@ -18,5 +19,6 @@ class Module
       self.send(:private, name)
       self.send(:private, "#{name}=")
     end
+    nil # like attr_accessor
   end
 end
