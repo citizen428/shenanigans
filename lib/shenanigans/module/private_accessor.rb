@@ -1,6 +1,4 @@
 class Module
-  private
-
   # Works like <tt>attr_accessor</tt> but generates private
   # getter/setter methods for class internal use only. Useful
   # for enforcing Smalltalk-style internal encapsulation.
@@ -21,4 +19,6 @@ class Module
     end
     nil # like attr_accessor
   end
+
+  private :private_accessor
 end
