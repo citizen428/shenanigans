@@ -23,7 +23,7 @@ end
 
 namespace :gem do
   desc "Build the gem"
-  task :build => :validate_gemspec do
+  task :build => :rerdoc do
     sh "gem build #{GEMSPEC}"
     FileUtils.mkdir_p 'pkg'
     FileUtils.mv "#{gemspec.name}-#{gemspec.version}.gem", 'pkg'
@@ -32,11 +32,6 @@ namespace :gem do
   desc "Install the gem locally"
   task :install => :build do
     sh "gem install pkg/#{gemspec.name}-#{gemspec.version}.gem"
-  end
-
-  desc "Validate the gemspec"
-  task :validate_gemspec do
-    gemspec.validate
   end
 end
 
