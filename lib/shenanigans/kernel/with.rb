@@ -9,4 +9,6 @@ module Kernel
   def with(o, &blk)
     o.tap(&blk)
   end
+
+  private :with
 end

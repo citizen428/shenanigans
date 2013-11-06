@@ -20,4 +20,5 @@ module Kernel
     CONVERSIONS.include?(conversion) ? input.send(conversion) : input
   end
 
+  private :prompt
 end
