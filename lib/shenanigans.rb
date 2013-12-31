@@ -1,5 +1,4 @@
 require 'shenanigans/array'
-require 'shenanigans/enumerable'
 require 'shenanigans/fixnum'
 require 'shenanigans/hash'
 require 'shenanigans/kernel'
