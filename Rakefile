@@ -17,7 +17,7 @@ end
 
 namespace :gem do
   desc 'Build the gem'
-  task :build => :rerdoc do
+  task :build => :yard do
     sh "gem build #{GEMSPEC}"
     FileUtils.mkdir_p 'pkg'
     FileUtils.mv "#{gemspec.name}-#{gemspec.version}.gem", "pkg"
