@@ -1,1 +1,1 @@
-require_relative "module/private_accessor"
+require_relative 'module/private_accessor'
