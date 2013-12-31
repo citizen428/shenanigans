@@ -1,5 +1,8 @@
-source :rubygems
+source 'https://rubygems.org'
 
 gem "rake"
-gem "minitest", ">= 2.6.0", :group => :development
-gem "rdoc", :group => :development
+
+group :developement do
+  gem "minitest", ">= 2.6.0"
+  gem "yard"
+end

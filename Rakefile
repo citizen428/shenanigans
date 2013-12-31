@@ -1,5 +1,5 @@
 require 'rake/testtask'
-require 'rdoc/task'
+require 'yard'
 require 'fileutils'
 GEMSPEC = 'shenanigans.gemspec'
 
@@ -7,14 +7,8 @@ Rake::TestTask.new do |t|
   t.pattern = 'test/**/test_*.rb'
 end
 
-Rake::RDocTask.new do |rd|
-  rd.rdoc_dir = 'doc/'
-  rd.main = "README.rdoc"
-  rd.rdoc_files.include("README.rdoc", "lib/**/*.rb")
-  rd.title = 'Shenanigans'
-
-  rd.options << '--line-numbers'
-  rd.options << '--all'
+YARD::Rake::YardocTask.new do |t|
+  t.options = ['--protected', '--private']
 end
 
 def gemspec
@@ -22,14 +16,14 @@ def gemspec
 end
 
 namespace :gem do
-  desc "Build the gem"
+  desc 'Build the gem'
   task :build => :rerdoc do
     sh "gem build #{GEMSPEC}"
     FileUtils.mkdir_p 'pkg'
-    FileUtils.mv "#{gemspec.name}-#{gemspec.version}.gem", 'pkg'
+    FileUtils.mv "#{gemspec.name}-#{gemspec.version}.gem", "pkg"
   end
 
-  desc "Install the gem locally"
+  desc 'Install the gem locally'
   task :install => :build do
     sh "gem install pkg/#{gemspec.name}-#{gemspec.version}.gem"
   end
