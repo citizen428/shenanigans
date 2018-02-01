@@ -9,7 +9,7 @@ module Kernel
   #     puts 'Something went wrong'
   #   end
   #   #=> Outputs 'Something went wrong'
-  def require_optional(gem, &block)
+  def require_optional(gem, &block) #:doc:
     require gem
   rescue LoadError
     block.call if block

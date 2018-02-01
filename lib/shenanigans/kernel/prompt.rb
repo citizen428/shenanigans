@@ -14,7 +14,7 @@ module Kernel
   #   prompt("Prompt> ", :to_f)
   #   Prompt> 12
   #   #=> 12.0
-  def prompt(text='', conversion=nil)
+  def prompt(text='', conversion=nil) #:doc:
     print text unless text.empty?
     input = gets.chomp
     CONVERSIONS.include?(conversion) ? input.send(conversion) : input
