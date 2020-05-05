@@ -4,7 +4,7 @@ require "standard/rake"
 require "yard"
 
 Rake::TestTask.new do |t|
-  t.pattern = "test/**/test_*.rb"
+  t.pattern = "test/**/*_test.rb"
 end
 
 YARD::Rake::YardocTask.new do |t|

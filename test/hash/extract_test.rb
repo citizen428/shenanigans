@@ -6,6 +6,6 @@ class Extract < Minitest::Test
     hash = { a: 1, b: 2, c: 3 }
     assert_equal hash.extract(:b, :a), { a: 1, b: 2 }
     assert_equal hash.extract(:a, :d), { a: 1 }
-    assert_equal {}.extract(:a, :c), {}
+    assert_equal({}.extract(:a, :c), {})
   end
 end
