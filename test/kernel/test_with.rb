@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'shenanigans/kernel/with'
 
-class With < MiniTest::Unit::TestCase
+class With < Minitest::Test
   def test_with
     result = with([]) do |a|
       a << "a"

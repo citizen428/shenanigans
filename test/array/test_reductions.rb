@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'shenanigans/array/reductions'
 
-class ArrayReductions < MiniTest::Unit::TestCase
+class ArrayReductions < Minitest::Test
   TEST_ARRAY = [*1..4]
 
   def test_reductions_without_params_or_block

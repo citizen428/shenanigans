@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'shenanigans/kernel/require_optional'
 require 'stringio'
 
-class RequireOptional < MiniTest::Unit::TestCase
+class RequireOptional < Minitest::Test
   def test_require_optional
     assert_equal require_optional('non_existent'), nil
   end

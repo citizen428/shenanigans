@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'shenanigans/hash/to_ostruct'
 
-class ToOstruct < MiniTest::Unit::TestCase
+class ToOstruct < Minitest::Test
   def test_simple_hash
     struct = {a: 1, b: 2}.to_ostruct
     assert struct.a == 1

@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'shenanigans/kernel/fn'
 
-class Fn < MiniTest::Unit::TestCase
+class Fn < Minitest::Test
   def test_with_symbols
     result = ["foo bar", "baz qux"].map &fn(:split, :last)
     assert result == ["bar", "qux"]

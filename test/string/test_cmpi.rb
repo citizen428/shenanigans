@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'shenanigans/string/cmpi'
 
-class Cmpi < MiniTest::Unit::TestCase
+class Cmpi < Minitest::Test
   def cmpi
     str = "aabbcc"
     assert str.cmpi("AAbbcc")

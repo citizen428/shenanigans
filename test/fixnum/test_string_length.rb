@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'shenanigans/fixnum/string_length'
 
-class StringLength < MiniTest::Unit::TestCase
+class StringLength < Minitest::Test
   def test_zero
     assert 0.string_length == 1
   end

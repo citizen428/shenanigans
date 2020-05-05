@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'shenanigans/array/zip_with'
 
-class ZipWith < MiniTest::Unit::TestCase
+class ZipWith < Minitest::Test
   def test_zip_with_with_symbol
     result = [*1..3].zip_with([*1..3], :+)
     assert result == [2, 4, 6]

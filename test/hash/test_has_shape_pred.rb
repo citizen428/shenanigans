@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'shenanigans/hash/has_shape_pred'
 
-class HasShape < MiniTest::Unit::TestCase
+class HasShape < Minitest::Test
   def setup
     @hash = {
       k1: 1.0,

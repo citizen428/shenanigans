@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'shenanigans/object/display'
 require 'stringio'
 
-class Display < MiniTest::Unit::TestCase
+class Display < Minitest::Test
   def setup
     @orig_stdout = $stdout
     $stdout = StringIO.new("", "r+")

@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'shenanigans/hash/extract'
 
-class Extract < MiniTest::Unit::TestCase
+class Extract < Minitest::Test
   def test_extract
     hash = { a: 1, b: 2, c: 3 }
     assert_equal hash.extract(:b, :a), { a: 1, b: 2 }

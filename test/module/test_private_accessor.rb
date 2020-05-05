@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'shenanigans/module/private_accessor'
 
-class PrivateAccessor < MiniTest::Unit::TestCase
+class PrivateAccessor < Minitest::Test
   class Foo
     private_accessor :bar, :baz
 

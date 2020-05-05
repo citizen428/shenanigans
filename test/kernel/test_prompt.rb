@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'shenanigans/kernel/prompt'
 require 'stringio'
 
-class Prompt < MiniTest::Unit::TestCase
+class Prompt < Minitest::Test
   def setup
     @orig_stdin = $stderr
     @orig_stdout = $stdout
