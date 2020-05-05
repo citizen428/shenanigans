@@ -4,7 +4,7 @@ require 'stringio'
 
 class RequireOptional < Minitest::Test
   def test_require_optional
-    assert_equal require_optional('non_existent'), nil
+    assert_nil require_optional('non_existent')
   end
 
   def test_require_optional_with_block
