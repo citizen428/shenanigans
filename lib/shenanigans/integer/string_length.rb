@@ -1,4 +1,4 @@
-class Fixnum
+class Integer
   # Returns the length of the number's string representation.
   #     0.string_length
   #     #=> 1
@@ -7,8 +7,9 @@ class Fixnum
   #     -1.string_length
   #     #=> 2
   def string_length
-    return 1 if self.zero?
-    len = Math.log10(self.abs).floor.next
-    self > 0 ? len : len.next
+    return 1 if zero?
+
+    len = Math.log10(abs).floor.next
+    self.positive? ? len : len.next
   end
 end
