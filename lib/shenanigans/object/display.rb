@@ -2,9 +2,10 @@ class Object
   # Outputs the object and also returns it.
   # Will use <tt>puts</tt> if <tt>new_line</tt> is <tt>true</tt> and
   # <tt>print</tt> otherwise.
+  #
+  # @example
   #   "foo".display
-  #   foo
-  #   #=> "foo"
+  #   foo #=> "foo"
   #
   #   "foo".display(false)
   #   foo#=> "foo"

@@ -1,7 +1,7 @@
 class Module
-  # Works like <tt>attr_accessor</tt> but generates private
-  # getter/setter methods for class internal use only. Useful
-  # for enforcing Smalltalk-style internal encapsulation.
+  # Works like <tt>attr_accessor</tt> but generates private getter/setter
+  # methods for class internal use only. Useful for enforcing Smalltalk-style
+  # internal encapsulation.
   #
   # For a more complete implementation of a similar feature see {ivar_encapsulation}[https://github.com/citizen428/ivar_encapsulation].
   def private_accessor(*names)

@@ -3,6 +3,8 @@ require "ostruct"
 class Hash
   # Recursively converts a <tt>Hash</tt> and all nested <tt>Hash</tt>es to
   # <tt>OpenStruct</tt>s. Especially useful for parsing YAML.
+  #
+  # @example
   #     yaml=<<EOY
   #     subject: Programming Languages
   #     languages:
@@ -14,12 +16,9 @@ class Hash
   #         creator     : Larry Wall
   #     EOY
   #     struct = YAML.load(yaml).to_ostruct
-  #     struct.subject
-  #     #=> "Programming Languages"
-  #     struct.languages.first
-  #     #=> #<OpenStruct name="Ruby", creator="Matz">
-  #     struct.languages.first.creator
-  #     #=> "Matz"
+  #     struct.subject #=> "Programming Languages"
+  #     struct.languages.first #=> #<OpenStruct name="Ruby", creator="Matz">
+  #     struct.languages.first.creator #=> "Matz"
   def to_ostruct
     arr = map { |k, v|
       case v

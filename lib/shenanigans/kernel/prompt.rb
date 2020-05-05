@@ -6,13 +6,13 @@ module Kernel
   # Displays a prompt and returns chomped input.
   # Modelled after the Python method <tt>raw_input</tt>, but also can
   # be supplied with an optional conversion method.
+  # 
+  # @example A simple prompt
   #   prompt("Prompt> ")
-  #   Prompt> 12
-  #   #=> "12"
-  #
+  #   Prompt> 12 #=> "12"
+  # @example A prompt with conversion
   #   prompt("Prompt> ", :to_f)
-  #   Prompt> 12
-  #   #=> 12.0
+  #   Prompt> 12 #=> 12.0
   def prompt(text = "", conversion = nil)
     print text unless text.empty?
     input = gets.chomp
