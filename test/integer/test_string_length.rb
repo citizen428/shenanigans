@@ -1,5 +1,5 @@
-require 'minitest/autorun'
-require 'shenanigans/integer/string_length'
+require "minitest/autorun"
+require "shenanigans/integer/string_length"
 
 class StringLength < Minitest::Test
   def test_zero
@@ -11,6 +11,6 @@ class StringLength < Minitest::Test
   end
 
   def test_negative
-    assert (-1).string_length == 2
+    assert(-1.string_length) == 2
   end
 end

@@ -6,10 +6,10 @@ class Array
   #   a.random_subarray(3)
   #   #=> [[1, 3, 5], [2, 4], [1, 3, 4, 5]]
 
-  def random_subarray(n=1)
+  def random_subarray(n = 1)
     raise ArgumentError, "negative argument" if n < 0
     (1..n).map do
-      r = rand(2**self.size)
+      r = rand(2**size)
       self.select.with_index { |_, i| r[i] == 1 }
     end
   end

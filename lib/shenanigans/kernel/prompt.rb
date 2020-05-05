@@ -1,5 +1,4 @@
 module Kernel
-
   # Currently only used by <tt>prompt</tt>:
   # <tt>:to_i</tt>, <tt>:to_f</tt>, <tt>:to_r</tt>, <tt>:to_sym</tt>, <tt>:to_c</tt>
   CONVERSIONS = [:to_i, :to_f, :to_r, :to_sym, :to_c]
@@ -14,7 +13,7 @@ module Kernel
   #   prompt("Prompt> ", :to_f)
   #   Prompt> 12
   #   #=> 12.0
-  def prompt(text='', conversion=nil) #:doc:
+  def prompt(text = "", conversion = nil)
     print text unless text.empty?
     input = gets.chomp
     CONVERSIONS.include?(conversion) ? input.send(conversion) : input

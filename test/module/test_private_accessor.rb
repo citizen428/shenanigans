@@ -1,5 +1,5 @@
-require 'minitest/autorun'
-require 'shenanigans/module/private_accessor'
+require "minitest/autorun"
+require "shenanigans/module/private_accessor"
 
 class PrivateAccessor < Minitest::Test
   class Foo

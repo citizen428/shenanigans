@@ -1,4 +1,4 @@
-require 'ostruct'
+require "ostruct"
 
 class Hash
   # Recursively converts a <tt>Hash</tt> and all nested <tt>Hash</tt>es to
@@ -21,7 +21,7 @@ class Hash
   #     struct.languages.first.creator
   #     #=> "Matz"
   def to_ostruct
-    arr = map do |k, v|
+    arr = map { |k, v|
       case v
       when Hash
         [k, v.to_ostruct]
@@ -30,7 +30,7 @@ class Hash
       else
         [k, v]
       end
-    end
+    }
     OpenStruct.new(Hash[arr])
   end
 end

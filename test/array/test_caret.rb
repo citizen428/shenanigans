@@ -1,5 +1,5 @@
-require 'minitest/autorun'
-require 'shenanigans/array/caret'
+require "minitest/autorun"
+require "shenanigans/array/caret"
 
 class ArrayCaret < Minitest::Test
   def test_caret

@@ -1,6 +1,6 @@
-require 'minitest/autorun'
-require 'shenanigans/kernel/prompt'
-require 'stringio'
+require "minitest/autorun"
+require "shenanigans/kernel/prompt"
+require "stringio"
 
 class Prompt < Minitest::Test
   def setup

@@ -1,5 +1,5 @@
-require 'minitest/autorun'
-require 'shenanigans/hash/to_ostruct'
+require "minitest/autorun"
+require "shenanigans/hash/to_ostruct"
 
 class ToOstruct < Minitest::Test
   def test_simple_hash

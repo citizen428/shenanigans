@@ -1,7 +1,7 @@
-require 'shenanigans/array'
-require 'shenanigans/fixnum'
-require 'shenanigans/hash'
-require 'shenanigans/kernel'
-require 'shenanigans/module'
-require 'shenanigans/object'
-require 'shenanigans/string'
+require "shenanigans/array"
+require "shenanigans/fixnum"
+require "shenanigans/hash"
+require "shenanigans/kernel"
+require "shenanigans/module"
+require "shenanigans/object"
+require "shenanigans/string"

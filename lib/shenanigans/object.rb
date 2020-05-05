@@ -1,1 +1,1 @@
-require_relative 'object/display'
+require_relative "object/display"

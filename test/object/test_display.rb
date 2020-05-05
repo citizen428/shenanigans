@@ -1,6 +1,6 @@
-require 'minitest/autorun'
-require 'shenanigans/object/display'
-require 'stringio'
+require "minitest/autorun"
+require "shenanigans/object/display"
+require "stringio"
 
 class Display < Minitest::Test
   def setup
@@ -32,5 +32,4 @@ class Display < Minitest::Test
     $stdout.rewind
     assert $stdout.gets == str
   end
-
 end

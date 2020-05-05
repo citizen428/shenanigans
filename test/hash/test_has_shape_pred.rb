@@ -1,5 +1,5 @@
-require 'minitest/autorun'
-require 'shenanigans/hash/has_shape_pred'
+require "minitest/autorun"
+require "shenanigans/hash/has_shape_pred"
 
 class HasShape < Minitest::Test
   def setup

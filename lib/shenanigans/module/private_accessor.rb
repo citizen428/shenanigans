@@ -4,7 +4,7 @@ class Module
   # for enforcing Smalltalk-style internal encapsulation.
   #
   # For a more complete implementation of a similar feature see {ivar_encapsulation}[https://github.com/citizen428/ivar_encapsulation].
-  def private_accessor(*names) #:doc:
+  def private_accessor(*names)
     names.each do |name|
       instance_var_name = "@#{name}"
 
@@ -16,8 +16,8 @@ class Module
         instance_variable_set(instance_var_name, value)
       end
 
-      self.send(:private, name)
-      self.send(:private, "#{name}=")
+      send(:private, name)
+      send(:private, "#{name}=")
     end
     nil # like attr_accessor
   end

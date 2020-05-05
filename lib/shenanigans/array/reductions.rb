@@ -21,9 +21,9 @@ class Array
 
     initial ||= arr.shift
 
-    arr.inject([initial, [initial]]) do |(acc, result), el|
+    arr.inject([initial, [initial]]) { |(acc, result), el|
       val = op ? acc.send(op, el) : yield(acc, el)
       [val, result << val]
-    end.last
+    }.last
   end
 end

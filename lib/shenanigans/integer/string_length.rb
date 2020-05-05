@@ -10,6 +10,6 @@ class Integer
     return 1 if zero?
 
     len = Math.log10(abs).floor.next
-    self.positive? ? len : len.next
+    positive? ? len : len.next
   end
 end

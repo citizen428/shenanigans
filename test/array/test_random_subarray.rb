@@ -1,5 +1,5 @@
-require 'minitest/autorun'
-require 'shenanigans/array/random_subarray'
+require "minitest/autorun"
+require "shenanigans/array/random_subarray"
 
 class RandomSubarray < Minitest::Test
   def test_random_subarray

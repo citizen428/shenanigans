@@ -6,7 +6,7 @@ module Kernel
   #     a << "b"
   #   end
   #   #=> ["a", "b"]
-  def with(o, &blk) #:doc:
+  def with(o, &blk)
     o.tap(&blk)
   end
 

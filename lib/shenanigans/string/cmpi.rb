@@ -3,6 +3,6 @@ class String
   #   "test".cmpi("tesT")
   #   #=> true
   def cmpi(other)
-    self.casecmp(other).zero?
+    casecmp(other).zero?
   end
 end

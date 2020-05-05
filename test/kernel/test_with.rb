@@ -1,12 +1,12 @@
-require 'minitest/autorun'
-require 'shenanigans/kernel/with'
+require "minitest/autorun"
+require "shenanigans/kernel/with"
 
 class With < Minitest::Test
   def test_with
-    result = with([]) do |a|
+    result = with([]) { |a|
       a << "a"
       a << "b"
-    end
-    assert result == %w(a b)
+    }
+    assert result == %w[a b]
   end
 end

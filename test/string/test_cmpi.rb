@@ -1,5 +1,5 @@
-require 'minitest/autorun'
-require 'shenanigans/string/cmpi'
+require "minitest/autorun"
+require "shenanigans/string/cmpi"
 
 class Cmpi < Minitest::Test
   def cmpi

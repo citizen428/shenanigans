@@ -1,5 +1,5 @@
-require 'minitest/autorun'
-require 'shenanigans/array/zip_with'
+require "minitest/autorun"
+require "shenanigans/array/zip_with"
 
 class ZipWith < Minitest::Test
   def test_zip_with_with_symbol
@@ -8,7 +8,7 @@ class ZipWith < Minitest::Test
   end
 
   def test_zip_with_with_block
-    result = [*?a..?c].zip_with([*?a..?c]) { |a, b| a * 2 + b.upcase }
-    assert result == %w(aaA bbB ccC)
+    result = [*"a".."c"].zip_with([*"a".."c"]) { |a, b| a * 2 + b.upcase }
+    assert result == %w[aaA bbB ccC]
   end
 end

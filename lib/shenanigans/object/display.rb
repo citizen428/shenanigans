@@ -10,8 +10,8 @@ class Object
   #   foo#=> "foo"
   def display(new_line = true)
     m = new_line ? :puts : :print
-    self.tap { |o| send(m, o) }
+    tap { |o| send(m, o) }
   end
 
-  alias :d :display
+  alias d display
 end
