@@ -1,3 +1,5 @@
 doc/
 pkg/
 .yardoc
+lib/
+README.rdoc
