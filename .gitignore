@@ -3,3 +3,4 @@ pkg/
 .yardoc
 lib/
 README.rdoc
+.yardopts

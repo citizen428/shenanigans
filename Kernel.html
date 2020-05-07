@@ -119,12 +119,378 @@
 
 
 
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
 
+    <ul class="summary">
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#fn-instance_method" title="#fn (instance method)">#<strong>fn</strong>(*funs)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Composes a list of functions.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#prompt-instance_method" title="#prompt (instance method)">#<strong>prompt</strong>(text = &quot;&quot;, conversion = nil)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Displays a prompt and returns chomped input.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#require_optional-instance_method" title="#require_optional (instance method)">#<strong>require_optional</strong>(gem, &amp;block)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Optionally require a gem.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#with-instance_method" title="#with (instance method)">#<strong>with</strong>(o, &amp;blk)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A Pascal/ActionScript like <code>with</code> method.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="fn-instance_method">
+  
+    #<strong>fn</strong>(*funs)  &#x21d2; <tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Composes a list of functions. Functions can be specified as symbols or lambdas.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Composing symbols</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>foo bar</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>baz qux</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_fn'>fn</span><span class='lparen'>(</span><span class='symbol'>:split</span><span class='comma'>,</span> <span class='symbol'>:last</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='comment'>#=&gt; [&quot;bar&quot;, &quot;qux&quot;]</span></code></pre>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Composing symbplds and lambdas</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='lparen'>(</span><span class='int'>1</span><span class='op'>..</span><span class='int'>3</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_fn'>fn</span><span class='lparen'>(</span><span class='symbol'>:next</span><span class='comma'>,</span> <span class='tlambda'>-&gt;</span> <span class='id identifier rubyid_x'>x</span> <span class='tlambeg'>{</span> <span class='id identifier rubyid_x'>x</span> <span class='op'>*</span> <span class='id identifier rubyid_x'>x</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='tlambda'>-&gt;</span> <span class='id identifier rubyid_x'>x</span> <span class='tlambeg'>{</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='op'>/</span> <span class='int'>2</span> <span class='rbrace'>}</span> <span class='rparen'>)</span><span class='rparen'>)</span><span class='comment'>#=&gt; [2.0, 4.5, 8.0]</span>
+</code></pre>
+    
+  </div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12
+13
+14
+15
+16</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shenanigans/kernel/fn.rb', line 10</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_fn'>fn</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_funs'>funs</span><span class='rparen'>)</span>
+  <span class='tlambda'>-&gt;</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_funs'>funs</span><span class='period'>.</span><span class='id identifier rubyid_inject'>inject</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
+      <span class='const'>Proc</span> <span class='op'>===</span> <span class='id identifier rubyid_f'>f</span> <span class='op'>?</span> <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='id identifier rubyid_f'>f</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="prompt-instance_method">
+  
+    #<strong>prompt</strong>(text = &quot;&quot;, conversion = nil)  &#x21d2; <tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Displays a prompt and returns chomped input. Modelled after the Python method <code>raw_input</code>, but also can be supplied with an optional conversion method.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>A simple prompt</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_prompt'>prompt</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Prompt&gt; </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='const'>Prompt</span><span class='op'>&gt;</span> <span class='int'>12</span> <span class='comment'>#=&gt; &quot;12&quot;</span></code></pre>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>A prompt with conversion</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_prompt'>prompt</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Prompt&gt; </span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:to_f</span><span class='rparen'>)</span>
+<span class='const'>Prompt</span><span class='op'>&gt;</span> <span class='int'>12</span> <span class='comment'>#=&gt; 12.0</span></code></pre>
+    
+  </div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+16
+17
+18
+19
+20</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shenanigans/kernel/prompt.rb', line 16</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_prompt'>prompt</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_conversion'>conversion</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_print'>print</span> <span class='id identifier rubyid_text'>text</span> <span class='kw'>unless</span> <span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='id identifier rubyid_input'>input</span> <span class='op'>=</span> <span class='id identifier rubyid_gets'>gets</span><span class='period'>.</span><span class='id identifier rubyid_chomp'>chomp</span>
+  <span class='const'><span class='object_link'><a href="#CONVERSIONS-constant" title="Kernel::CONVERSIONS (constant)">CONVERSIONS</a></span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_conversion'>conversion</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_input'>input</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='id identifier rubyid_conversion'>conversion</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_input'>input</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="require_optional-instance_method">
+  
+    #<strong>require_optional</strong>(gem, &amp;block)  &#x21d2; <tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Optionally require a gem. If it is not available, <code>nil</code> will be returned. Alternatively, a block can be provided with code to run.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Without a block</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>non_existent</span><span class='tstring_end'>&quot;</span></span> <span class='comment'>#=&gt; nil</span></code></pre>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>With a custom block</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>non_existent</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Something went wrong</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span> <span class='comment'>#=&gt; Outputs &quot;Something went wrong&quot;</span></code></pre>
+    
+  </div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+12
+13
+14
+15
+16</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shenanigans/kernel/require_optional.rb', line 12</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_require_optional'>require_optional</span><span class='lparen'>(</span><span class='id identifier rubyid_gem'>gem</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_require'>require</span> <span class='id identifier rubyid_gem'>gem</span>
+<span class='kw'>rescue</span> <span class='const'>LoadError</span>
+  <span class='id identifier rubyid_block'>block</span><span class='op'>&amp;.</span><span class='id identifier rubyid_call'>call</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="with-instance_method">
+  
+    #<strong>with</strong>(o, &amp;blk)  &#x21d2; <tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>A Pascal/ActionScript like <code>with</code> method. Yields its argument to the provided block and then returns it.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_with'>with</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='op'>|</span>
+  <span class='id identifier rubyid_a'>a</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>a</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_a'>a</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>b</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span> <span class='comment'>#=&gt; [&quot;a&quot;, &quot;b&quot;]</span></code></pre>
+    
+  </div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shenanigans/kernel/with.rb', line 10</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_with'>with</span><span class='lparen'>(</span><span class='id identifier rubyid_o'>o</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_blk'>blk</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_o'>o</span><span class='period'>.</span><span class='id identifier rubyid_tap'>tap</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_blk'>blk</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
 
 </div>
 
       <div id="footer">
-  Generated on Thu May  7 17:07:48 2020 by
+  Generated on Thu May  7 17:11:30 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.7.1).
 </div>
