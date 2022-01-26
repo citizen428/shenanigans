@@ -1,6 +1,6 @@
 require "shenanigans/array"
-require "shenanigans/fixnum"
 require "shenanigans/hash"
+require "shenanigans/integer"
 require "shenanigans/kernel"
 require "shenanigans/module"
 require "shenanigans/object"
