@@ -3,7 +3,7 @@ class Hash
   #
   # @example Simple hash
   #     h = { k1: 1, k2: "1" }
-  #     h.has_shape?(k1: Fixnum, k2: String) #=> true
+  #     h.has_shape?(k1: Integer, k2: String) #=> true
   #     h.has_shape?(k1: Class, k2: String) #=> false
   # @example Nested hashes
   #     h = { k1: [], k2: { k3: Struct.new("Foo") } }
