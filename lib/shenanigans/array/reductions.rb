@@ -1,14 +1,14 @@
 class Array
-  # Similar to +reduce+/+inject+, but also returns intermediate values. Has the 
-  # same interface as +reduce+/+inject+, so an initial value, an operator or 
-  # both can be supplied. This method may eventually be moved to the 
+  # Similar to +reduce+/+inject+, but also returns intermediate values. Has the
+  # same interface as +reduce+/+inject+, so an initial value, an operator or
+  # both can be supplied. This method may eventually be moved to the
   # +Enumerable+ module.
   #
   # @example Symbol argument
   #   a = (1..4).to_a
-  #   a.reductions(:+) #=> 10
+  #   a.reductions(:+) #=> [1, 3, 6, 10]
   # @example Initial value and symbol argument
-  #   a.reductions(50, :+) #=> 60
+  #   a.reductions(50, :+) #=> [50, 51, 53, 56, 60]
   # @example Block argument
   #   %w(a b c).reductions { |s1, s2| s1+s2 } #=> ["a", "ab", "abc"]
   def reductions(*args, &block)

@@ -21,6 +21,4 @@ class Module
     end
     nil # like attr_accessor
   end
-
-  private :private_accessor
 end

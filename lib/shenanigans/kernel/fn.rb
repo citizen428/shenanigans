@@ -4,7 +4,7 @@ module Kernel
   #
   # @example Composing symbols
   #   ["foo bar", "baz qux"].map(&fn(:split, :last)) #=> ["bar", "qux"]
-  # @example Composing symbplds and lambdas
+  # @example Composing symbols and lambdas
   #   (1..3).map(&fn(:next, -> x { x * x }, -> x { x.to_f / 2 } ))
   #   #=> [2.0, 4.5, 8.0]
   def fn(*funs)
