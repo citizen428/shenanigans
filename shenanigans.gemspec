@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
   gem.name = "shenanigans"
-  gem.version = "1.0.16"
+  gem.version = "1.0.17"
   gem.author = "Michael Kohl"
   gem.email = "me@citizen428.net"
 
