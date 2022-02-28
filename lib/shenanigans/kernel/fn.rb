@@ -14,6 +14,4 @@ module Kernel
       end
     end
   end
-
-  private :fn
 end

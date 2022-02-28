@@ -14,6 +14,4 @@ module Kernel
   rescue LoadError
     block&.call
   end
-
-  private :require_optional
 end
