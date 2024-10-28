@@ -14,8 +14,7 @@ GEM
     rainbow (3.1.1)
     rake (13.0.6)
     regexp_parser (2.2.1)
-    rexml (3.3.6)
-      strscan
+    rexml (3.3.9)
     rubocop (1.25.1)
       parallel (~> 1.10)
       parser (>= 3.1.0.0)
@@ -34,7 +33,6 @@ GEM
     standard (1.7.2)
       rubocop (= 1.25.1)
       rubocop-performance (= 1.13.2)
-    strscan (3.1.0)
     unicode-display_width (2.1.0)
     yard (0.9.36)
 
